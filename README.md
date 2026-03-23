@@ -26,3 +26,11 @@ Este projeto é uma API backend desenvolvida com Node.js e Express para gerencia
 ```bash
 npm install
 npm run dev
+
+🌐 Swagger
+
+http://localhost:3001/api-docs
+
+🧪 Testes
+
+npm test
