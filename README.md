@@ -27,10 +27,8 @@ Este projeto é uma API backend desenvolvida com Node.js e Express para gerencia
 npm install
 npm run dev
 
-🌐 Swagger
-
+## 🌐 Swagger
 http://localhost:3001/api-docs
 
-🧪 Testes
-
+## 🧪 Testes
 npm test
