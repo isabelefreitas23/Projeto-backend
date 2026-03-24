@@ -1,148 +1,129 @@
-# 🛒 API RESTful de E-commerce
+# API RESTful de E-commerce
 
-Este projeto é uma API backend desenvolvida com **Node.js** e **Express**, com o objetivo de gerenciar usuários, produtos e categorias em um sistema de e-commerce.
+## Descrição
 
-A aplicação conta com autenticação via **JWT**, documentação interativa com **Swagger** e testes automatizados utilizando **Jest** e **Supertest**.
-
----
-
-## 🚀 Status do Projeto
-
-🟢 Em desenvolvimento
+Este projeto consiste em uma aplicação backend desenvolvida com o objetivo de fornecer uma API robusta, escalável e segura para gerenciamento de recursos. A solução foi estruturada seguindo boas práticas de arquitetura, organização de código e padronização de endpoints, permitindo fácil manutenção e evolução.
 
 ---
 
-## 🧰 Tecnologias Utilizadas
+## Requisitos
 
-- Node.js
-- Express
-- Sequelize (ORM)
-- PostgreSQL
-- JWT (Autenticação)
-- Swagger (Documentação da API)
-- Jest + Supertest (Testes automatizados)
-
----
-
-## 📦 Funcionalidades
-
-- 👤 Cadastro e autenticação de usuários
-- 🛒 CRUD de produtos
-- 🗂️ CRUD de categorias
-- 🔐 Proteção de rotas com JWT
-- 📄 Documentação interativa com Swagger
-- 🧪 Testes automatizados
-
----
-
-## ⚙️ Pré-requisitos
-
-Antes de começar, você precisa ter instalado:
+Antes de iniciar, certifique-se de possuir os seguintes requisitos instalados no ambiente:
 
 - Node.js (versão 16 ou superior)
-- NPM ou Yarn
-- PostgreSQL
+- Gerenciador de pacotes (NPM ou Yarn)
+- Banco de dados PostgreSQL (ou outro compatível, conforme configuração)
 - Git
 
 ---
 
-## 🔧 Instalação
+## Instalação
 
 Clone o repositório:
 
 ```bash
-git clone https://github.com/isabelefreitas23/Projeto-backend.git
+git clone https://github.com/seu-usuario/seu-projeto.git
 
-Acesse a pasta do projeto:
+Acesse o diretório do projeto:
 
-cd Projeto-backend
+cd seu-projeto
 
 Instale as dependências:
 
 npm install
-🔐 Configuração
+Configuração
 
-Crie um arquivo .env na raiz do projeto e configure as variáveis de ambiente:
+Crie um arquivo .env na raiz do projeto e configure as variáveis de ambiente conforme necessário:
 
-PORT=3001
-
+PORT=3000
 DB_HOST=localhost
-DB_USER=seu_usuario
-DB_PASSWORD=sua_senha
-DB_NAME=nome_do_banco
 DB_PORT=5432
+DB_USER=usuario
+DB_PASSWORD=senha
+DB_NAME=banco_de_dados
+JWT_SECRET=chave_secreta
 
-JWT_SECRET=sua_chave_secreta
-▶️ Como rodar o projeto
+Certifique-se de que o banco de dados esteja criado e acessível com as credenciais informadas.
 
-Para iniciar o servidor em ambiente de desenvolvimento:
+Execução
+
+Para iniciar o projeto em ambiente de desenvolvimento:
 
 npm run dev
 
-A API estará disponível em:
+Para execução em produção:
 
-http://localhost:3001
-📄 Documentação da API (Swagger)
+npm start
 
-Após iniciar o projeto, acesse:
+A aplicação estará disponível em:
 
-http://localhost:3001/api-docs
-
-Você poderá visualizar e testar todos os endpoints diretamente pelo navegador.
-
-📁 Estrutura do Projeto
+http://localhost:3000
+Estrutura do Projeto
 src/
-├── config/         # Configurações (banco, etc)
-├── controllers/    # Lógica das requisições
-├── models/         # Modelos do banco de dados
+├── config/         # Configurações gerais
+├── controllers/    # Controladores das rotas
+├── models/         # Modelos de dados
 ├── routes/         # Definição das rotas
-├── middlewares/    # Middlewares (auth, validações)
+├── middlewares/    # Middlewares da aplicação
 ├── services/       # Regras de negócio
-├── database/       # Conexão com banco
+├── database/       # Conexão com banco de dados
 └── app.js          # Inicialização da aplicação
 
-🔗 Endpoints da API
+Uso da API
 
-🔐 Autenticação
-POST /auth/register → Cadastro de usuário
-POST /auth/login → Login e geração de token
+Autenticação
 
-🛒 Produtos
-GET /products → Listar produtos
-POST /products → Criar produto
-PUT /products/:id → Atualizar produto
-DELETE /products/:id → Remover produto
+POST /auth/login
 
-🗂️ Categorias
-GET /categories
-POST /categories
-PUT /categories/:id
-DELETE /categories/:id
+Exemplo de requisição:
 
-🧪 Testes
+{
+  "email": "usuario@email.com",
+  "password": "123456"
+}
 
-Para rodar os testes automatizados:
+Resposta esperada:
+
+{
+  "token": "jwt_token_aqui"
+}
+Produtos
+GET /products
+
+Retorna a lista de produtos cadastrados.
+
+POST /products
+
+Exemplo de requisição:
+
+{
+  "name": "Produto Exemplo",
+  "price": 100.0,
+  "categoryId": 1
+}
+Testes
+
+Para executar os testes automatizados:
 
 npm test
 
-Os testes foram desenvolvidos utilizando:
+Os testes são realizados utilizando frameworks apropriados para validação de endpoints e regras de negócio.
 
-Jest
-Supertest
+Contribuição
 
-🤝 Contribuindo
+Para contribuir com o projeto:
 
-Contribuições são sempre bem-vindas!
+Realize um fork do repositório
+Crie uma branch para sua modificação:
 
-Faça um fork do projeto
-Crie uma branch para sua feature
-git checkout -b minha-feature
-Commit suas alterações
-git commit -m 'Minha nova feature'
-Envie para o repositório
-git push origin minha-feature
-Abra um Pull Request 🚀
+git checkout -b minha-alteracao
 
-📄 Licença
+Realize o commit das alterações:
 
-Este projeto está sob a licença MIT.
+git commit -m "Descrição da alteração"
+
+Envie para o repositório remoto:
+
+git push origin minha-alteracao
+
+Abra um Pull Request
